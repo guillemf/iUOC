@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "MainViewController.h"
+#import "OpenAPI.h"
+#import "UOCData.h"
 
 @implementation AppDelegate
 
@@ -14,6 +17,11 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    OpenAPI *oal = [[OpenAPI alloc] initWithParams:[NSUserDefaults standardUserDefaults]];
+    UOCData *uds = [[UOCData alloc] init];
+    
+    MainViewController *mainVC = [[MainViewController alloc] initWithOrigin:oal data:uds];
+    self.window.rootViewController = mainVC;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
