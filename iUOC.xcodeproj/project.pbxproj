@@ -6,7 +6,27 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		8A0AC36E1764E61800366CFC /* Documentation */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 8A0AC3711764E61800366CFC /* Build configuration list for PBXAggregateTarget "Documentation" */;
+			buildPhases = (
+				8A0AC3721764E64900366CFC /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Documentation;
+			productName = Documentation;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
+		8A3F5DAF16F9E45400680219 /* testMaterial.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 8A3F5DAE16F9E45400680219 /* testMaterial.pdf */; };
+		8A3F5DB416FB340300680219 /* LoggerClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A3F5DB216FB340300680219 /* LoggerClient.m */; };
+		8A3F5DB716FB352700680219 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3F5DB516FB34F400680219 /* CFNetwork.framework */; };
+		8A3F5DB816FB352D00680219 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3F5DB516FB34F400680219 /* CFNetwork.framework */; };
+		8A3F5DBA16FB356500680219 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3F5DB916FB356500680219 /* SystemConfiguration.framework */; };
+		8A3F5DBB16FB356D00680219 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3F5DB916FB356500680219 /* SystemConfiguration.framework */; };
 		8A82004F16F3886400259378 /* OpenAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A82004D16F3886400259378 /* OpenAPI.m */; };
 		8A82005216F3888700259378 /* jsontest.json in Resources */ = {isa = PBXBuildFile; fileRef = 8A82005116F3888700259378 /* jsontest.json */; };
 		8A82005316F3888C00259378 /* OpenAPITest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A82004E16F3886400259378 /* OpenAPITest.m */; };
@@ -50,6 +70,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8A11231D1764EBB700745428 /* AppledocSettings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AppledocSettings.plist; sourceTree = "<group>"; };
+		8A3F5DAE16F9E45400680219 /* testMaterial.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = testMaterial.pdf; sourceTree = "<group>"; };
+		8A3F5DB116FB340300680219 /* LoggerClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggerClient.h; sourceTree = "<group>"; };
+		8A3F5DB216FB340300680219 /* LoggerClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoggerClient.m; sourceTree = "<group>"; };
+		8A3F5DB316FB340300680219 /* LoggerCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggerCommon.h; sourceTree = "<group>"; };
+		8A3F5DB516FB34F400680219 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		8A3F5DB916FB356500680219 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8A82004C16F3886400259378 /* OpenAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenAPI.h; sourceTree = "<group>"; };
 		8A82004D16F3886400259378 /* OpenAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenAPI.m; sourceTree = "<group>"; };
 		8A82004E16F3886400259378 /* OpenAPITest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenAPITest.m; sourceTree = "<group>"; };
@@ -93,6 +120,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A3F5DBA16FB356500680219 /* SystemConfiguration.framework in Frameworks */,
+				8A3F5DB716FB352700680219 /* CFNetwork.framework in Frameworks */,
 				8AD57D9F16F721D300D5AD34 /* CoreData.framework in Frameworks */,
 				8ADB4BC816F37FCF0057BCCE /* UIKit.framework in Frameworks */,
 				8ADB4BCA16F37FCF0057BCCE /* Foundation.framework in Frameworks */,
@@ -104,6 +133,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A3F5DBB16FB356D00680219 /* SystemConfiguration.framework in Frameworks */,
+				8A3F5DB816FB352D00680219 /* CFNetwork.framework in Frameworks */,
 				8AD57DA016F727E200D5AD34 /* CoreData.framework in Frameworks */,
 				8ADB4BE616F37FCF0057BCCE /* SenTestingKit.framework in Frameworks */,
 				8ADB4BE716F37FCF0057BCCE /* UIKit.framework in Frameworks */,
@@ -116,6 +147,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A3F5DB016FB33DA00680219 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				8A3F5DB116FB340300680219 /* LoggerClient.h */,
+				8A3F5DB216FB340300680219 /* LoggerClient.m */,
+				8A3F5DB316FB340300680219 /* LoggerCommon.h */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
 		8A82004B16F3886400259378 /* OpenAPI */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +196,7 @@
 				8AD57D9916F720B100D5AD34 /* UOCData.h */,
 				8AD57D9A16F720B100D5AD34 /* UOCData.m */,
 				8AD57D9C16F7216E00D5AD34 /* UOCDataTests.m */,
+				8A3F5DAE16F9E45400680219 /* testMaterial.pdf */,
 				8AD57DA116F728A500D5AD34 /* iUOC.xcdatamodeld */,
 			);
 			path = Data;
@@ -163,6 +205,7 @@
 		8ADB4BBB16F37FCF0057BCCE = {
 			isa = PBXGroup;
 			children = (
+				8A3F5DB016FB33DA00680219 /* Debug */,
 				8AD57D9816F7207A00D5AD34 /* Data */,
 				8A82006316F3946900259378 /* View Controllers */,
 				8A82005816F3932A00259378 /* images */,
@@ -186,6 +229,8 @@
 		8ADB4BC616F37FCF0057BCCE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8A3F5DB916FB356500680219 /* SystemConfiguration.framework */,
+				8A3F5DB516FB34F400680219 /* CFNetwork.framework */,
 				8AD57D9E16F721D300D5AD34 /* CoreData.framework */,
 				8A82005616F388B500259378 /* OCMockitoIOS.framework */,
 				8A82005416F388AA00259378 /* OCHamcrestIOS.framework */,
@@ -210,6 +255,7 @@
 		8ADB4BCE16F37FCF0057BCCE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8A11231D1764EBB700745428 /* AppledocSettings.plist */,
 				8ADB4BCF16F37FCF0057BCCE /* iUOC-Info.plist */,
 				8ADB4BD016F37FCF0057BCCE /* InfoPlist.strings */,
 				8ADB4BD316F37FCF0057BCCE /* main.m */,
@@ -301,6 +347,7 @@
 			targets = (
 				8ADB4BC316F37FCF0057BCCE /* iUOC */,
 				8ADB4BE316F37FCF0057BCCE /* iUOCTests */,
+				8A0AC36E1764E61800366CFC /* Documentation */,
 			);
 		};
 /* End PBXProject section */
@@ -328,12 +375,26 @@
 			files = (
 				8ADB4BF016F37FCF0057BCCE /* InfoPlist.strings in Resources */,
 				8A82005216F3888700259378 /* jsontest.json in Resources */,
+				8A3F5DAF16F9E45400680219 /* testMaterial.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		8A0AC3721764E64900366CFC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Build an Xcode documentation\n~/bin/appledoc $SOURCE_ROOT/$PROJECT_NAME/AppledocSettings.plist .\necho ~/bin/appledoc $SOURCE_ROOT/$PROJECT_NAME/AppledocSettings.plist .";
+		};
 		8ADB4BE216F37FCF0057BCCE /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -360,6 +421,7 @@
 				8A82006716F394C300259378 /* MainViewController.m in Sources */,
 				8AD57D9B16F720B100D5AD34 /* UOCData.m in Sources */,
 				8AD57DA316F728A500D5AD34 /* iUOC.xcdatamodeld in Sources */,
+				8A3F5DB416FB340300680219 /* LoggerClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +465,20 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8A0AC36F1764E61800366CFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8A0AC3701764E61800366CFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		8ADB4BF416F37FCF0057BCCE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -524,6 +600,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8A0AC3711764E61800366CFC /* Build configuration list for PBXAggregateTarget "Documentation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8A0AC36F1764E61800366CFC /* Debug */,
+				8A0AC3701764E61800366CFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8ADB4BBF16F37FCF0057BCCE /* Build configuration list for PBXProject "iUOC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

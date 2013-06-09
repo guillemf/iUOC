@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DocSetNodes version="1.0">
+    <TOC>
+        <Node type="folder">
+            <Name>OpenAPI</Name>
+            <Path>index.html</Path>
+			<Subnodes>
+                
+				
+				<Node type="folder">
+					<Name>Classes</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="1"/>
+						<NodeRef refid="2"/>
+						<NodeRef refid="3"/>
+						<NodeRef refid="4"/>
+						<NodeRef refid="5"/>
+						<NodeRef refid="6"/>
+						
+					</Subnodes>
+				</Node>
+				
+				
+				
+			</Subnodes>
+        </Node>
+    </TOC>
+	<Library>
+		
+		<Node id="1">
+			<Name>OpenAPI</Name>
+			<Path>Classes/OpenAPI.html</Path>
+		</Node>
+		<Node id="2">
+			<Name>OpenAPITest</Name>
+			<Path>Classes/OpenAPITest.html</Path>
+		</Node>
+		<Node id="3">
+			<Name>OpenAPIURLConnection</Name>
+			<Path>Classes/OpenAPIURLConnection.html</Path>
+		</Node>
+		<Node id="4">
+			<Name>UOCData</Name>
+			<Path>Classes/UOCData.html</Path>
+		</Node>
+		<Node id="5">
+			<Name>UOCDataTests</Name>
+			<Path>Classes/UOCDataTests.html</Path>
+		</Node>
+		<Node id="6">
+			<Name>UOCMaterialConnection</Name>
+			<Path>Classes/UOCMaterialConnection.html</Path>
+		</Node>
+		
+		
+		
+	</Library>
+</DocSetNodes>

@@ -1,0 +1,4 @@
+Documentation set was installed to Xcode!
+
+Path: /Users/gfernandezg/Library/Developer/Shared/Documentation/DocSets/com.guillemfernandez.OpenAPI.docset
+Time: 2013-06-09 19:24:00 +0000

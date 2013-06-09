@@ -16,7 +16,8 @@ NSString * const kOAPIOfflineErrorNotification = @"kOAPIOfflineErrorNotification
 NSString * const kOAPIAuthorisationErrorNotification = @"kOAPIAuthorisationErrorNotification";
 NSString * const kOAPIDataReceivedNotification = @"kOAPIDataReceivedNotification";
 NSString * const kOAPIInvalidTokenNotification = @"kOAPIInvalidTokenNotification";
-NSString * const kOAPIUserAuthorisedNotification = @"kOAPIUserAuthorisedNotification";
+NSString * const kOAPIUserAuthorizedNotification = @"kOAPIUserAuthorizedNotification";
+NSString * const kOAPIUserUnAutorizedNotification = @"kOAPIUserUnAutorizedNotification";
 
 // OAuth 2 registration dependent parameters
 #define kOAuthClientID @"WzdW03gp0jYkiwqG0tt3gCewL3oTKwWn7ljyLWzsnfhDdV5RSz8xjvVOITIcafos4dq5mcyXaijc2a94IT1F1nSHcNuIvwmNHrelfHtbIhisH5V5ZAy0sAHfK6xNgXdr"
@@ -47,13 +48,13 @@ NSString * const kOAPIUserAuthorisedNotification = @"kOAPIUserAuthorisedNotifica
     return self;
 }
 
-- (BOOL)isUserAuthorised
+- (BOOL)isUserAuthorized
 {
     NSString *token = [_params objectForKey:kOAPIUserToken];
     return ( token != nil);
 }
 
-- (void)authoriseUsingWebView:(UIWebView *)view
+- (void)authorizeUsingWebView:(UIWebView *)view
 {
     // A web is needed to access the initial authorisation
     NSString *urlAuthorisation = [NSString stringWithFormat:@"%@?response_type=code" \
@@ -75,18 +76,22 @@ NSString * const kOAPIUserAuthorisedNotification = @"kOAPIUserAuthorisedNotifica
 {
     NSLog(@"Deauthorize");
     [_params removeObjectForKey:kOAPIUserToken];
+    [_params synchronize];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kOAPIUserUnAutorizedNotification object:self];
 }
 
 - (void)performGETRequest:(NSString *)url withParameters:(NSDictionary *)parameters forId:(NSString *)rId notifyOnCompletion:(NSString *)notificationKey error:(NSError **)error
 {
-    if (![self isUserAuthorised]) {
+    if (![self isUserAuthorized]) {
         NSMutableDictionary* details = [NSMutableDictionary dictionary];
-        [details setValue:@"User not authorised, please call authorise" forKey:NSLocalizedDescriptionKey];
+        [details setValue:@"User not authorized, please call authorize" forKey:NSLocalizedDescriptionKey];
         *error = [NSError errorWithDomain:kOAPIErrorDomain code:EUNOAU userInfo:details];
         return;
     }
     
-    NSMutableString *parametersString = [NSMutableString stringWithFormat:@"%@?", url];
+    NSMutableString *parametersString = [NSMutableString stringWithFormat:@"%@%@", kOAuthAPIBaseURL, url];
+    
+    if (parameters) [parametersString appendString:@"?"];
     
     for (NSString* key in parameters)
         [parametersString appendString:[NSString stringWithFormat:@"%@=%@&", key, [parameters objectForKey:key]]];
@@ -99,6 +104,8 @@ NSString * const kOAPIUserAuthorisedNotification = @"kOAPIUserAuthorisedNotifica
 
     OpenAPIURLConnection *requestConnection = [[OpenAPIURLConnection alloc] initWithRequest:openAPIRequest delegate:self];
     requestConnection.requestType = OAPIConnectionRequestType;
+    requestConnection.notification = notificationKey;
+    requestConnection.rId = rId;
 
 }
 
@@ -179,12 +186,12 @@ NSString * const kOAPIUserAuthorisedNotification = @"kOAPIUserAuthorisedNotifica
 
 #pragma mark - NSURLConnectionDelegate methods
 
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+- (void)connection:(OpenAPIURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
     self.receivedData = nil;
 }
 
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+- (void)connection:(OpenAPIURLConnection *)connection didReceiveData:(NSData *)data
 {
     if (_receivedData == nil)
         _receivedData = [[NSMutableData alloc] initWithData:data];
@@ -192,7 +199,7 @@ NSString * const kOAPIUserAuthorisedNotification = @"kOAPIUserAuthorisedNotifica
         [_receivedData appendData:data];
 }
 
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+- (void)connection:(OpenAPIURLConnection *)connection didFailWithError:(NSError *)error
 {
     NSMutableDictionary *errorInfo = [NSMutableDictionary dictionaryWithObject:error forKey:@"error"];
     
@@ -218,11 +225,11 @@ NSString * const kOAPIUserAuthorisedNotification = @"kOAPIUserAuthorisedNotifica
     }
 }
 
-- (void) connectionDidFinishLoading:(NSURLConnection *)connection
+- (void) connectionDidFinishLoading:(OpenAPIURLConnection *)connection
 {
     NSError *error;
     NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData:_receivedData options:NSJSONReadingMutableContainers error:&error];
-    
+        
     if (error != nil) {
         NSDictionary *errorInfo = [NSDictionary dictionaryWithObject:error forKey:@"error"];
         [[NSNotificationCenter defaultCenter] postNotificationName:kOAPIErrorNotification object:self userInfo:errorInfo];
@@ -234,16 +241,20 @@ NSString * const kOAPIUserAuthorisedNotification = @"kOAPIUserAuthorisedNotifica
     }
     
     NSMutableDictionary *responseData = [jsonArray mutableCopy];
-    OpenAPIURLConnection *currrentConnection = (OpenAPIURLConnection *)connection;
 
-    switch (currrentConnection.requestType) {
+    switch (connection.requestType) {
         case OAPIConnectionRequestType:
-            if (currrentConnection.rId == nil)
-                [responseData setObject:@"" forKey:@"requesterid"];
-            else
-                [responseData setObject:currrentConnection.rId forKey:@"requesterid"];
+        {            
+            NSDictionary *notificationData = [NSDictionary dictionaryWithObjectsAndKeys:responseData, @"data"
+                                              , connection.rId==nil?@"":connection.rId, @"requesterid"
+                                              , nil];
             
-            [[NSNotificationCenter defaultCenter] postNotificationName:kOAPIDataReceivedNotification object:self userInfo:responseData];
+            [[NSNotificationCenter defaultCenter] postNotificationName:kOAPIDataReceivedNotification object:self userInfo:notificationData];
+            
+            if (connection.notification != nil) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:connection.notification object:self userInfo:responseData];
+            }
+        }
             break;
         case OAPIConnectionTokenExchangeType:
         case OAPIConnectionTokenRenewType:
@@ -253,7 +264,7 @@ NSString * const kOAPIUserAuthorisedNotification = @"kOAPIUserAuthorisedNotifica
                  [_params setObject:obj forKey:key];
              }];
             [_params synchronize];
-            [[NSNotificationCenter defaultCenter] postNotificationName:kOAPIUserAuthorisedNotification object:self userInfo:responseData];
+            [[NSNotificationCenter defaultCenter] postNotificationName:kOAPIUserAuthorizedNotification object:self userInfo:responseData];
         }
             break;
         default:

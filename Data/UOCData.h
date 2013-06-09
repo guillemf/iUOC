@@ -19,7 +19,8 @@
 extern NSString * const kUOCDErrorDomain;
 enum {
     kUOCDErrorKeyNotInEntity,
-    kUOCDErrorUnexistingClassroom
+    kUOCDErrorUnexistingClassroom,
+    kUOCDErrorDownloadingMaterial
 } UOCError;
 
 /**
@@ -29,7 +30,18 @@ extern NSString * const kUOCDWillStartDownloadingMaterial;
 extern NSString * const kUOCDDidStartDownloadingMaterial;
 extern NSString * const kUOCDWillEndDownloadingMaterial;
 extern NSString * const kUOCDDidEndtDownloadingMaterial;
+extern NSString * const kUOCDDownloadErrror;
 
+extern NSString * const kUOCDNewUserDataAvailable;
+
+@interface UOCMaterialConnection : NSURLConnection
+
+@property (strong, nonatomic) NSString *materialId;
+@property (strong, nonatomic) NSString *classroomId;
+
+- (id)initWithRequest:(NSURLRequest *)request forMaterial:(NSString *)materialId inClassroom:(NSString *)classroomId delegate:(id)delegate;
+
+@end
 
 @interface UOCData : NSObject <NSURLConnectionDataDelegate>
 
@@ -39,7 +51,7 @@ extern NSString * const kUOCDDidEndtDownloadingMaterial;
 /**
  Default initialiser
  Creates the object and keeps the reference to a object containing the managed object context where to store all data
- @param parameters List of the user parameters
+ @param moc NSManagedObjectContext used to save all data
  */
 - (id)initWithMOC:(NSManagedObjectContext *)moc;
 /** 
@@ -53,7 +65,16 @@ extern NSString * const kUOCDDidEndtDownloadingMaterial;
  @param error Object to contain possible errors during insert
  */
 - (void)setUserData:(NSDictionary *)userData error:(NSError **)error;
-
+/**
+ Get current user data. If no user data or error, nil is returned
+ */
+- (NSDictionary *)getUserData;
+/**
+ Delete user information data. If error produced, NO is returned.
+ @param error Object to contain possible errors during insert
+ @return BOOL indicating whether the data has been deleted or not
+ */
+- (BOOL)deleteUserData:(NSError **)error;
 /**
  EVENTS Methods
  */
@@ -87,7 +108,12 @@ extern NSString * const kUOCDDidEndtDownloadingMaterial;
  @param error Object to contain possible errors during update
  */
 - (void)updateEvent:(NSDictionary *)eventData error:(NSError **)error;
-
+/**
+ Delete all events in the system
+ @param error Object to contain possible errors during insert
+ @return number of deleted events if done or -1 if error
+ */
+- (int)deleteAllEvents:(NSError **)error;
 /**
  CLASSROOM Methods
  */
@@ -122,6 +148,12 @@ extern NSString * const kUOCDDidEndtDownloadingMaterial;
  */
 - (void)updateClassroom:(NSDictionary *)classroomData error:(NSError **)error;
 /**
+ Delete all classrooms in the system
+ @param error Object to contain possible errors during insert
+ @return number of deleted events if done or -1 if error
+ */
+- (int)deleteAllClassrooms:(NSError **)error;
+/**
  MATERIAL Methods
  */
 
@@ -133,7 +165,28 @@ extern NSString * const kUOCDDidEndtDownloadingMaterial;
 - (void)addMaterial:(NSDictionary *)materialData error:(NSError *__autoreleasing *)error;
 /**
  Number of material stored for a given classroom in the system
+ @param classroomId identifier of the classroom you want the meterial from
  @return int corresponding to the number of material stored in the system
  */
 - (int)materialCountForClassroom:(NSString *)classroomId;
+/**
+ Get material data for a given id
+ @param materialId Id of the requested Material
+ @param classroomId Id of the Classroom which the material belongs to
+ @param error Object to contain possible errors during request
+ @return NSDictionary with the data of the material if found, otherwise nil
+ */
+- (NSDictionary *)getMaterialWithId:(NSString *)materialId inClassroom:(NSString *)classroomId error:(NSError **)error;
+/**
+ Update material with the new values
+ @param materialData NSDictionary with the objects and keys correspondig to the user object
+ @param error Object to contain possible errors during update
+ */
+- (void)updateMaterial:(NSDictionary *)materialData error:(NSError **)error;
+/**
+ List of Material stored in the system for a give Classroom
+ @param classroomId identifier of the classroom you want the meterial from
+ @return NSArray corresponding to all the material stored in the system
+ */
+- (NSArray *)materialListForClassroom:(NSString *)classroomId;
 @end

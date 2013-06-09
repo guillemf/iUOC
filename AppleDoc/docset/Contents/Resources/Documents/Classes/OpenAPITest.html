@@ -1,0 +1,817 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>OpenAPITest Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 858)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">OpenAPI </a></h1>
+				<a id="developerHome" href="../index.html">Guillem Fernandez</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">OpenAPITest Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/errorNotification:">&nbsp;&nbsp;&nbsp;&nbsp;- errorNotification:</option>
+	
+	<option value="//api/name/invalidToken:">&nbsp;&nbsp;&nbsp;&nbsp;- invalidToken:</option>
+	
+	<option value="//api/name/newDataReceived:">&nbsp;&nbsp;&nbsp;&nbsp;- newDataReceived:</option>
+	
+	<option value="//api/name/setUp">&nbsp;&nbsp;&nbsp;&nbsp;- setUp</option>
+	
+	<option value="//api/name/tearDown">&nbsp;&nbsp;&nbsp;&nbsp;- tearDown</option>
+	
+	<option value="//api/name/testAccessTokenExchangeDataReceivedParamsAreStored">&nbsp;&nbsp;&nbsp;&nbsp;- testAccessTokenExchangeDataReceivedParamsAreStored</option>
+	
+	<option value="//api/name/testDataFromConnectionGetsAppendedToReceivedData">&nbsp;&nbsp;&nbsp;&nbsp;- testDataFromConnectionGetsAppendedToReceivedData</option>
+	
+	<option value="//api/name/testDataIsParsedWhenConnectionFinishedReceivingData">&nbsp;&nbsp;&nbsp;&nbsp;- testDataIsParsedWhenConnectionFinishedReceivingData</option>
+	
+	<option value="//api/name/testErrorNotificationIsRaisedWhenParsingDataProducesError">&nbsp;&nbsp;&nbsp;&nbsp;- testErrorNotificationIsRaisedWhenParsingDataProducesError</option>
+	
+	<option value="//api/name/testErrorOnWebViewForAuthorisationSendsNotification">&nbsp;&nbsp;&nbsp;&nbsp;- testErrorOnWebViewForAuthorisationSendsNotification</option>
+	
+	<option value="//api/name/testNavigationToURLAreAllowedWhenURLIsNotRedirectURL">&nbsp;&nbsp;&nbsp;&nbsp;- testNavigationToURLAreAllowedWhenURLIsNotRedirectURL</option>
+	
+	<option value="//api/name/testNavigationToURLIsNotAllowedWhenURLIsRedirectURL">&nbsp;&nbsp;&nbsp;&nbsp;- testNavigationToURLIsNotAllowedWhenURLIsRedirectURL</option>
+	
+	<option value="//api/name/testNotificationIsSentWhenConnectionIsOffline">&nbsp;&nbsp;&nbsp;&nbsp;- testNotificationIsSentWhenConnectionIsOffline</option>
+	
+	<option value="//api/name/testReceivedDataRemovedWhenANewResponseIsReceived">&nbsp;&nbsp;&nbsp;&nbsp;- testReceivedDataRemovedWhenANewResponseIsReceived</option>
+	
+	<option value="//api/name/testRenewTokenExchangeDataReceivedParamsAreUpdated">&nbsp;&nbsp;&nbsp;&nbsp;- testRenewTokenExchangeDataReceivedParamsAreUpdated</option>
+	
+	<option value="//api/name/testRequestCodeInRedirectionURLCallsAccessTokenExchange">&nbsp;&nbsp;&nbsp;&nbsp;- testRequestCodeInRedirectionURLCallsAccessTokenExchange</option>
+	
+	<option value="//api/name/testWhenAskedForUserAuthorizedTokenIsRequested">&nbsp;&nbsp;&nbsp;&nbsp;- testWhenAskedForUserAuthorizedTokenIsRequested</option>
+	
+	<option value="//api/name/testWhenAuthorisationWithWebViewIsStartedLoadRequestIsCalled">&nbsp;&nbsp;&nbsp;&nbsp;- testWhenAuthorisationWithWebViewIsStartedLoadRequestIsCalled</option>
+	
+	<option value="//api/name/testWhenDeauthorizeIsDoneShouldSendNotification">&nbsp;&nbsp;&nbsp;&nbsp;- testWhenDeauthorizeIsDoneShouldSendNotification</option>
+	
+	<option value="//api/name/testWhenNoRequestCodeIsReceivedWithRedirectionURLNotificationErrorIsSent">&nbsp;&nbsp;&nbsp;&nbsp;- testWhenNoRequestCodeIsReceivedWithRedirectionURLNotificationErrorIsSent</option>
+	
+	<option value="//api/name/testWhenResponseIsInvalidTokenNotificationIsSent">&nbsp;&nbsp;&nbsp;&nbsp;- testWhenResponseIsInvalidTokenNotificationIsSent</option>
+	
+	<option value="//api/name/testWhenTokenDoesntExistsIsUserAuthorizedReturnsNO">&nbsp;&nbsp;&nbsp;&nbsp;- testWhenTokenDoesntExistsIsUserAuthorizedReturnsNO</option>
+	
+	<option value="//api/name/testWhenTokenExistsIsUserAuthorizedReturnsYES">&nbsp;&nbsp;&nbsp;&nbsp;- testWhenTokenExistsIsUserAuthorizedReturnsYES</option>
+	
+	<option value="//api/name/testWhenTokenObtainedNotificationIsSent">&nbsp;&nbsp;&nbsp;&nbsp;- testWhenTokenObtainedNotificationIsSent</option>
+	
+	<option value="//api/name/testWhenUserIsNotAuthorizedRequestWillReturnError">&nbsp;&nbsp;&nbsp;&nbsp;- testWhenUserIsNotAuthorizedRequestWillReturnError</option>
+	
+	<option value="//api/name/tokenNotificationCalled:">&nbsp;&nbsp;&nbsp;&nbsp;- tokenNotificationCalled:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+</ul></li>
+
+
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/errorNotification:">errorNotification:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/invalidToken:">invalidToken:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/newDataReceived:">newDataReceived:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setUp">setUp</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/tearDown">tearDown</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/testAccessTokenExchangeDataReceivedParamsAreStored">testAccessTokenExchangeDataReceivedParamsAreStored</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/testDataFromConnectionGetsAppendedToReceivedData">testDataFromConnectionGetsAppendedToReceivedData</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/testDataIsParsedWhenConnectionFinishedReceivingData">testDataIsParsedWhenConnectionFinishedReceivingData</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/testErrorNotificationIsRaisedWhenParsingDataProducesError">testErrorNotificationIsRaisedWhenParsingDataProducesError</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/testErrorOnWebViewForAuthorisationSendsNotification">testErrorOnWebViewForAuthorisationSendsNotification</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/testNavigationToURLAreAllowedWhenURLIsNotRedirectURL">testNavigationToURLAreAllowedWhenURLIsNotRedirectURL</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/testNavigationToURLIsNotAllowedWhenURLIsRedirectURL">testNavigationToURLIsNotAllowedWhenURLIsRedirectURL</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/testNotificationIsSentWhenConnectionIsOffline">testNotificationIsSentWhenConnectionIsOffline</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/testReceivedDataRemovedWhenANewResponseIsReceived">testReceivedDataRemovedWhenANewResponseIsReceived</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/testRenewTokenExchangeDataReceivedParamsAreUpdated">testRenewTokenExchangeDataReceivedParamsAreUpdated</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/testRequestCodeInRedirectionURLCallsAccessTokenExchange">testRequestCodeInRedirectionURLCallsAccessTokenExchange</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/testWhenAskedForUserAuthorizedTokenIsRequested">testWhenAskedForUserAuthorizedTokenIsRequested</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/testWhenAuthorisationWithWebViewIsStartedLoadRequestIsCalled">testWhenAuthorisationWithWebViewIsStartedLoadRequestIsCalled</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/testWhenDeauthorizeIsDoneShouldSendNotification">testWhenDeauthorizeIsDoneShouldSendNotification</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/testWhenNoRequestCodeIsReceivedWithRedirectionURLNotificationErrorIsSent">testWhenNoRequestCodeIsReceivedWithRedirectionURLNotificationErrorIsSent</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/testWhenResponseIsInvalidTokenNotificationIsSent">testWhenResponseIsInvalidTokenNotificationIsSent</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/testWhenTokenDoesntExistsIsUserAuthorizedReturnsNO">testWhenTokenDoesntExistsIsUserAuthorizedReturnsNO</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/testWhenTokenExistsIsUserAuthorizedReturnsYES">testWhenTokenExistsIsUserAuthorizedReturnsYES</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/testWhenTokenObtainedNotificationIsSent">testWhenTokenObtainedNotificationIsSent</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/testWhenUserIsNotAuthorizedRequestWillReturnError">testWhenUserIsNotAuthorizedRequestWillReturnError</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/tokenNotificationCalled:">tokenNotificationCalled:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="OpenAPITest Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">OpenAPITest Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">SenTestCase</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">OpenAPITest.m</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						
+						
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setUp">&ndash;&nbsp;setUp</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/tearDown">&ndash;&nbsp;tearDown</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/testWhenAskedForUserAuthorizedTokenIsRequested">&ndash;&nbsp;testWhenAskedForUserAuthorizedTokenIsRequested</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/testWhenTokenDoesntExistsIsUserAuthorizedReturnsNO">&ndash;&nbsp;testWhenTokenDoesntExistsIsUserAuthorizedReturnsNO</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/testWhenTokenExistsIsUserAuthorizedReturnsYES">&ndash;&nbsp;testWhenTokenExistsIsUserAuthorizedReturnsYES</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/testWhenUserIsNotAuthorizedRequestWillReturnError">&ndash;&nbsp;testWhenUserIsNotAuthorizedRequestWillReturnError</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/testWhenAuthorisationWithWebViewIsStartedLoadRequestIsCalled">&ndash;&nbsp;testWhenAuthorisationWithWebViewIsStartedLoadRequestIsCalled</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/testErrorOnWebViewForAuthorisationSendsNotification">&ndash;&nbsp;testErrorOnWebViewForAuthorisationSendsNotification</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/testNavigationToURLAreAllowedWhenURLIsNotRedirectURL">&ndash;&nbsp;testNavigationToURLAreAllowedWhenURLIsNotRedirectURL</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/testNavigationToURLIsNotAllowedWhenURLIsRedirectURL">&ndash;&nbsp;testNavigationToURLIsNotAllowedWhenURLIsRedirectURL</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/testWhenNoRequestCodeIsReceivedWithRedirectionURLNotificationErrorIsSent">&ndash;&nbsp;testWhenNoRequestCodeIsReceivedWithRedirectionURLNotificationErrorIsSent</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/tokenNotificationCalled:">&ndash;&nbsp;tokenNotificationCalled:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/testRequestCodeInRedirectionURLCallsAccessTokenExchange">&ndash;&nbsp;testRequestCodeInRedirectionURLCallsAccessTokenExchange</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/testReceivedDataRemovedWhenANewResponseIsReceived">&ndash;&nbsp;testReceivedDataRemovedWhenANewResponseIsReceived</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/testDataFromConnectionGetsAppendedToReceivedData">&ndash;&nbsp;testDataFromConnectionGetsAppendedToReceivedData</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/errorNotification:">&ndash;&nbsp;errorNotification:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/testNotificationIsSentWhenConnectionIsOffline">&ndash;&nbsp;testNotificationIsSentWhenConnectionIsOffline</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/newDataReceived:">&ndash;&nbsp;newDataReceived:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/testDataIsParsedWhenConnectionFinishedReceivingData">&ndash;&nbsp;testDataIsParsedWhenConnectionFinishedReceivingData</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/testErrorNotificationIsRaisedWhenParsingDataProducesError">&ndash;&nbsp;testErrorNotificationIsRaisedWhenParsingDataProducesError</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/invalidToken:">&ndash;&nbsp;invalidToken:</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/testWhenResponseIsInvalidTokenNotificationIsSent">&ndash;&nbsp;testWhenResponseIsInvalidTokenNotificationIsSent</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/testAccessTokenExchangeDataReceivedParamsAreStored">&ndash;&nbsp;testAccessTokenExchangeDataReceivedParamsAreStored</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/testWhenTokenObtainedNotificationIsSent">&ndash;&nbsp;testWhenTokenObtainedNotificationIsSent</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/testRenewTokenExchangeDataReceivedParamsAreUpdated">&ndash;&nbsp;testRenewTokenExchangeDataReceivedParamsAreUpdated</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/testWhenDeauthorizeIsDoneShouldSendNotification">&ndash;&nbsp;testWhenDeauthorizeIsDoneShouldSendNotification</a></code>
+		
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/errorNotification:" title="errorNotification:"></a>
+	<h3 class="subsubtitle method-title">errorNotification:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)errorNotification:(NSNotification *)<em>notification</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/invalidToken:" title="invalidToken:"></a>
+	<h3 class="subsubtitle method-title">invalidToken:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)invalidToken:(NSNotification *)<em>notification</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/newDataReceived:" title="newDataReceived:"></a>
+	<h3 class="subsubtitle method-title">newDataReceived:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)newDataReceived:(NSNotification *)<em>notification</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/setUp" title="setUp"></a>
+	<h3 class="subsubtitle method-title">setUp</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)setUp</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/tearDown" title="tearDown"></a>
+	<h3 class="subsubtitle method-title">tearDown</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)tearDown</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/testAccessTokenExchangeDataReceivedParamsAreStored" title="testAccessTokenExchangeDataReceivedParamsAreStored"></a>
+	<h3 class="subsubtitle method-title">testAccessTokenExchangeDataReceivedParamsAreStored</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)testAccessTokenExchangeDataReceivedParamsAreStored</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/testDataFromConnectionGetsAppendedToReceivedData" title="testDataFromConnectionGetsAppendedToReceivedData"></a>
+	<h3 class="subsubtitle method-title">testDataFromConnectionGetsAppendedToReceivedData</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)testDataFromConnectionGetsAppendedToReceivedData</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/testDataIsParsedWhenConnectionFinishedReceivingData" title="testDataIsParsedWhenConnectionFinishedReceivingData"></a>
+	<h3 class="subsubtitle method-title">testDataIsParsedWhenConnectionFinishedReceivingData</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)testDataIsParsedWhenConnectionFinishedReceivingData</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/testErrorNotificationIsRaisedWhenParsingDataProducesError" title="testErrorNotificationIsRaisedWhenParsingDataProducesError"></a>
+	<h3 class="subsubtitle method-title">testErrorNotificationIsRaisedWhenParsingDataProducesError</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)testErrorNotificationIsRaisedWhenParsingDataProducesError</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/testErrorOnWebViewForAuthorisationSendsNotification" title="testErrorOnWebViewForAuthorisationSendsNotification"></a>
+	<h3 class="subsubtitle method-title">testErrorOnWebViewForAuthorisationSendsNotification</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)testErrorOnWebViewForAuthorisationSendsNotification</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/testNavigationToURLAreAllowedWhenURLIsNotRedirectURL" title="testNavigationToURLAreAllowedWhenURLIsNotRedirectURL"></a>
+	<h3 class="subsubtitle method-title">testNavigationToURLAreAllowedWhenURLIsNotRedirectURL</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)testNavigationToURLAreAllowedWhenURLIsNotRedirectURL</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/testNavigationToURLIsNotAllowedWhenURLIsRedirectURL" title="testNavigationToURLIsNotAllowedWhenURLIsRedirectURL"></a>
+	<h3 class="subsubtitle method-title">testNavigationToURLIsNotAllowedWhenURLIsRedirectURL</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)testNavigationToURLIsNotAllowedWhenURLIsRedirectURL</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/testNotificationIsSentWhenConnectionIsOffline" title="testNotificationIsSentWhenConnectionIsOffline"></a>
+	<h3 class="subsubtitle method-title">testNotificationIsSentWhenConnectionIsOffline</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)testNotificationIsSentWhenConnectionIsOffline</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/testReceivedDataRemovedWhenANewResponseIsReceived" title="testReceivedDataRemovedWhenANewResponseIsReceived"></a>
+	<h3 class="subsubtitle method-title">testReceivedDataRemovedWhenANewResponseIsReceived</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)testReceivedDataRemovedWhenANewResponseIsReceived</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/testRenewTokenExchangeDataReceivedParamsAreUpdated" title="testRenewTokenExchangeDataReceivedParamsAreUpdated"></a>
+	<h3 class="subsubtitle method-title">testRenewTokenExchangeDataReceivedParamsAreUpdated</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)testRenewTokenExchangeDataReceivedParamsAreUpdated</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/testRequestCodeInRedirectionURLCallsAccessTokenExchange" title="testRequestCodeInRedirectionURLCallsAccessTokenExchange"></a>
+	<h3 class="subsubtitle method-title">testRequestCodeInRedirectionURLCallsAccessTokenExchange</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)testRequestCodeInRedirectionURLCallsAccessTokenExchange</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/testWhenAskedForUserAuthorizedTokenIsRequested" title="testWhenAskedForUserAuthorizedTokenIsRequested"></a>
+	<h3 class="subsubtitle method-title">testWhenAskedForUserAuthorizedTokenIsRequested</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)testWhenAskedForUserAuthorizedTokenIsRequested</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/testWhenAuthorisationWithWebViewIsStartedLoadRequestIsCalled" title="testWhenAuthorisationWithWebViewIsStartedLoadRequestIsCalled"></a>
+	<h3 class="subsubtitle method-title">testWhenAuthorisationWithWebViewIsStartedLoadRequestIsCalled</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)testWhenAuthorisationWithWebViewIsStartedLoadRequestIsCalled</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/testWhenDeauthorizeIsDoneShouldSendNotification" title="testWhenDeauthorizeIsDoneShouldSendNotification"></a>
+	<h3 class="subsubtitle method-title">testWhenDeauthorizeIsDoneShouldSendNotification</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)testWhenDeauthorizeIsDoneShouldSendNotification</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/testWhenNoRequestCodeIsReceivedWithRedirectionURLNotificationErrorIsSent" title="testWhenNoRequestCodeIsReceivedWithRedirectionURLNotificationErrorIsSent"></a>
+	<h3 class="subsubtitle method-title">testWhenNoRequestCodeIsReceivedWithRedirectionURLNotificationErrorIsSent</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)testWhenNoRequestCodeIsReceivedWithRedirectionURLNotificationErrorIsSent</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/testWhenResponseIsInvalidTokenNotificationIsSent" title="testWhenResponseIsInvalidTokenNotificationIsSent"></a>
+	<h3 class="subsubtitle method-title">testWhenResponseIsInvalidTokenNotificationIsSent</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)testWhenResponseIsInvalidTokenNotificationIsSent</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/testWhenTokenDoesntExistsIsUserAuthorizedReturnsNO" title="testWhenTokenDoesntExistsIsUserAuthorizedReturnsNO"></a>
+	<h3 class="subsubtitle method-title">testWhenTokenDoesntExistsIsUserAuthorizedReturnsNO</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)testWhenTokenDoesntExistsIsUserAuthorizedReturnsNO</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/testWhenTokenExistsIsUserAuthorizedReturnsYES" title="testWhenTokenExistsIsUserAuthorizedReturnsYES"></a>
+	<h3 class="subsubtitle method-title">testWhenTokenExistsIsUserAuthorizedReturnsYES</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)testWhenTokenExistsIsUserAuthorizedReturnsYES</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/testWhenTokenObtainedNotificationIsSent" title="testWhenTokenObtainedNotificationIsSent"></a>
+	<h3 class="subsubtitle method-title">testWhenTokenObtainedNotificationIsSent</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)testWhenTokenObtainedNotificationIsSent</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/testWhenUserIsNotAuthorizedRequestWillReturnError" title="testWhenUserIsNotAuthorizedRequestWillReturnError"></a>
+	<h3 class="subsubtitle method-title">testWhenUserIsNotAuthorizedRequestWillReturnError</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)testWhenUserIsNotAuthorizedRequestWillReturnError</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/tokenNotificationCalled:" title="tokenNotificationCalled:"></a>
+	<h3 class="subsubtitle method-title">tokenNotificationCalled:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (void)tokenNotificationCalled:(NSNotification *)<em>notification</em></code></div>
+
+    
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 Guillem Fernandez. All rights reserved. (Last updated: 2013-06-09)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 858)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>

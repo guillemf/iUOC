@@ -24,7 +24,7 @@ extern NSString * const kOAuthClientID;
  */
 extern NSString * const kOAPIErrorDomain;
 
-#define EUNOAU      1       /* User not authorised */
+#define EUNOAU      1       /* User not authorized */
 #define ENOTEC      2       /* No token exchange code */
 
 /**
@@ -36,7 +36,8 @@ extern NSString * const kOAPIErrorNotification;
 
 extern NSString * const kOAPIDataReceivedNotification;
 extern NSString * const kOAPIInvalidTokenNotification;
-extern NSString * const kOAPIUserAuthorisedNotification;
+extern NSString * const kOAPIUserAuthorizedNotification;
+extern NSString * const kOAPIUserUnAutorizedNotification;
 
 /**
  OAuth 2 constants. 
@@ -46,6 +47,7 @@ extern NSString * const kOAPIUserAuthorisedNotification;
 #define kOAuthAuthorizationURL @"http://denver.uoc.es:8080/webapps/uocapi/oauth/authorize"
 #define kOAuthTokenURL @"http://denver.uoc.es:8080/webapps/uocapi/oauth/token"
 #define kOAuthRedirectURL @"uoc://oauthresponse"
+#define kOAuthAPIBaseURL @"http://denver.uoc.es:8080/webapps/uocapi/api/v1"
 
 @interface OpenAPI : NSObject <NSURLConnectionDelegate, NSURLConnectionDataDelegate, UIWebViewDelegate>
 
@@ -58,17 +60,20 @@ extern NSString * const kOAPIUserAuthorisedNotification;
  @param parameters List of the user parameters
  */
 - (id)initWithParams:(NSUserDefaults *)parameters;
-/** Check whether the user is authorised by the OpenAPI or not*/
-- (BOOL)isUserAuthorised;
-/** Starts the authorisation process */
-- (void)authoriseUsingWebView:(UIWebView *)view;
+/** Checks whether the user is authorized by the OpenAPI or not*/
+- (BOOL)isUserAuthorized;
+/** 
+ Starts the authorisation process 
+ @param view UIWebView used to show OAuth info from server
+ */
+- (void)authorizeUsingWebView:(UIWebView *)view;
 /** Starts the deauthorisation process */
 - (void)deauthorize;
 /**
- Method to perform the different requests to the service
+ Method to perform the different requests to the service. They are GET requests. When finished a notification is received.
  @param url Complete url in REST format starting from the root of the service
- @param withParameters List of parameters to send on the header of the connection
- @param forId Identification of the object the call was made for, it is only a reference that will be returned as is on the results to be able of identify the call.
+ @param parameters List of parameters to send on the header of the connection
+ @param rId Identification of the object the call was made for, it is only a reference that will be returned as is on the results to be able of identify the call.
  @param notificationKey Notification to be fired when the data is received
  @param error Error object to detect before the call is made
  */
@@ -87,5 +92,6 @@ typedef NS_ENUM(NSInteger, OAPIConnectionType) {
 
 @property (strong, nonatomic) NSString *rId;
 @property (assign, nonatomic) OAPIConnectionType requestType;
+@property (strong, nonatomic) NSString *notification;
 
 @end

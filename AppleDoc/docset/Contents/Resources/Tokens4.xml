@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/UOCData.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/UOCData</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UOCData.h</DeclaredIn>
+			
+			<NodeRef refid="4"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCData/setReceivedData:</TokenIdentifier>
+			<Abstract type="html">Data received on the current/last request</Abstract>
+			<DeclaredIn>UOCData.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong) NSMutableData *receivedData</Declaration>
+			
+			
+			<Anchor>//api/name/receivedData</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCData/receivedData</TokenIdentifier>
+			<Abstract type="html">Data received on the current/last request</Abstract>
+			<DeclaredIn>UOCData.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong) NSMutableData *receivedData</Declaration>
+			
+			
+			<Anchor>//api/name/receivedData</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UOCData/receivedData</TokenIdentifier>
+			<Abstract type="html">Data received on the current/last request</Abstract>
+			<DeclaredIn>UOCData.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong) NSMutableData *receivedData</Declaration>
+			
+			
+			<Anchor>//api/name/receivedData</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCData/initWithMOC:</TokenIdentifier>
+			<Abstract type="html">Default initialiser
+Creates the object and keeps the reference to a object containing the managed object context where to store all data</Abstract>
+			<DeclaredIn>UOCData.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithMOC:(NSManagedObjectContext *)moc</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>moc</Name>
+					<Abstract type="html">NSManagedObjectContext used to save all data</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithMOC:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCData/hasUserData</TokenIdentifier>
+			<Abstract type="html">Check whether the storage has user data</Abstract>
+			<DeclaredIn>UOCData.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)hasUserData</Declaration>
+			
+			<ReturnValue><Abstract type="html">BOOL indicating whether there is user data or not</Abstract></ReturnValue>
+			<Anchor>//api/name/hasUserData</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCData/setUserData:error:</TokenIdentifier>
+			<Abstract type="html">Sets the user data for the storage linked to the object</Abstract>
+			<DeclaredIn>UOCData.h</DeclaredIn>			
+			
+			<Declaration>- (void)setUserData:(NSDictionary *)userData error:(NSError **)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>userData</Name>
+					<Abstract type="html">NSDictionary with the objects and keys corresponding to the user object</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">Object to contain possible errors during insert</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setUserData:error:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCData/getUserData</TokenIdentifier>
+			<Abstract type="html">Get current user data. If no user data or error, nil is returned</Abstract>
+			<DeclaredIn>UOCData.h</DeclaredIn>			
+			
+			<Declaration>- (NSDictionary *)getUserData</Declaration>
+			
+			
+			<Anchor>//api/name/getUserData</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCData/deleteUserData:</TokenIdentifier>
+			<Abstract type="html">Delete user information data. If error produced, NO is returned.</Abstract>
+			<DeclaredIn>UOCData.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)deleteUserData:(NSError **)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>error</Name>
+					<Abstract type="html">Object to contain possible errors during insert</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">BOOL indicating whether the data has been deleted or not</Abstract></ReturnValue>
+			<Anchor>//api/name/deleteUserData:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCData/addEvent:error:</TokenIdentifier>
+			<Abstract type="html">Adds an event to the list of events</Abstract>
+			<DeclaredIn>UOCData.h</DeclaredIn>			
+			
+			<Declaration>- (void)addEvent:(NSDictionary *)eventData error:(NSError **)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>eventData</Name>
+					<Abstract type="html">NSDictionary with the objects and keys correspondig to the event object</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">Object to contain possible errors during insert</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addEvent:error:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCData/eventsCount</TokenIdentifier>
+			<Abstract type="html">Number of events stored in the system</Abstract>
+			<DeclaredIn>UOCData.h</DeclaredIn>			
+			
+			<Declaration>- (int)eventsCount</Declaration>
+			
+			<ReturnValue><Abstract type="html">int corresponding to the number of events stored in the system</Abstract></ReturnValue>
+			<Anchor>//api/name/eventsCount</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCData/eventsList</TokenIdentifier>
+			<Abstract type="html">List of events stored in the system</Abstract>
+			<DeclaredIn>UOCData.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)eventsList</Declaration>
+			
+			<ReturnValue><Abstract type="html">NSArray corresponding to all the events stored in the system</Abstract></ReturnValue>
+			<Anchor>//api/name/eventsList</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCData/getEventWithId:error:</TokenIdentifier>
+			<Abstract type="html">Get event data for a given id</Abstract>
+			<DeclaredIn>UOCData.h</DeclaredIn>			
+			
+			<Declaration>- (NSDictionary *)getEventWithId:(NSString *)eventId error:(NSError **)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>eventId</Name>
+					<Abstract type="html">Id of the event requested</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">Object to contain possible errors during request</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">NSDictionary with the data of the event if found, otherwise nil</Abstract></ReturnValue>
+			<Anchor>//api/name/getEventWithId:error:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCData/updateEvent:error:</TokenIdentifier>
+			<Abstract type="html">Update event with the new values</Abstract>
+			<DeclaredIn>UOCData.h</DeclaredIn>			
+			
+			<Declaration>- (void)updateEvent:(NSDictionary *)eventData error:(NSError **)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>eventData</Name>
+					<Abstract type="html">NSDictionary with the objects and keys correspondig to the user object</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">Object to contain possible errors during update</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/updateEvent:error:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCData/deleteAllEvents:</TokenIdentifier>
+			<Abstract type="html">Delete all events in the system</Abstract>
+			<DeclaredIn>UOCData.h</DeclaredIn>			
+			
+			<Declaration>- (int)deleteAllEvents:(NSError **)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>error</Name>
+					<Abstract type="html">Object to contain possible errors during insert</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">number of deleted events if done or -1 if error</Abstract></ReturnValue>
+			<Anchor>//api/name/deleteAllEvents:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCData/addClassroom:error:</TokenIdentifier>
+			<Abstract type="html">Adds an classroom to the list of classrooms</Abstract>
+			<DeclaredIn>UOCData.h</DeclaredIn>			
+			
+			<Declaration>- (void)addClassroom:(NSDictionary *)classroomData error:(NSError *__autoreleasing *)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>classroomData</Name>
+					<Abstract type="html">NSDictionary with the objects and keys correspondig to the classroom object</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">Object to contain possible errors during insert</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addClassroom:error:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCData/classroomCount</TokenIdentifier>
+			<Abstract type="html">Number of classroom stored in the system</Abstract>
+			<DeclaredIn>UOCData.h</DeclaredIn>			
+			
+			<Declaration>- (int)classroomCount</Declaration>
+			
+			<ReturnValue><Abstract type="html">int corresponding to the number of classroom stored in the system</Abstract></ReturnValue>
+			<Anchor>//api/name/classroomCount</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCData/classroomList</TokenIdentifier>
+			<Abstract type="html">List of Classrooms stored in the system</Abstract>
+			<DeclaredIn>UOCData.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)classroomList</Declaration>
+			
+			<ReturnValue><Abstract type="html">NSArray corresponding to all the classrroms stored in the system</Abstract></ReturnValue>
+			<Anchor>//api/name/classroomList</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCData/getClassroomWithId:error:</TokenIdentifier>
+			<Abstract type="html">Get classroom data for a given id</Abstract>
+			<DeclaredIn>UOCData.h</DeclaredIn>			
+			
+			<Declaration>- (NSDictionary *)getClassroomWithId:(NSString *)classroomId error:(NSError **)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>classroomId</Name>
+					<Abstract type="html">Id of the requested Classroom</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">Object to contain possible errors during request</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">NSDictionary with the data of the classroom if found, otherwise nil</Abstract></ReturnValue>
+			<Anchor>//api/name/getClassroomWithId:error:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCData/updateClassroom:error:</TokenIdentifier>
+			<Abstract type="html">Update classroom with the new values</Abstract>
+			<DeclaredIn>UOCData.h</DeclaredIn>			
+			
+			<Declaration>- (void)updateClassroom:(NSDictionary *)classroomData error:(NSError **)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>classroomData</Name>
+					<Abstract type="html">NSDictionary with the objects and keys correspondig to the user object</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">Object to contain possible errors during update</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/updateClassroom:error:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCData/deleteAllClassrooms:</TokenIdentifier>
+			<Abstract type="html">Delete all classrooms in the system</Abstract>
+			<DeclaredIn>UOCData.h</DeclaredIn>			
+			
+			<Declaration>- (int)deleteAllClassrooms:(NSError **)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>error</Name>
+					<Abstract type="html">Object to contain possible errors during insert</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">number of deleted events if done or -1 if error</Abstract></ReturnValue>
+			<Anchor>//api/name/deleteAllClassrooms:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCData/addMaterial:error:</TokenIdentifier>
+			<Abstract type="html">Adds an Material to the list of Material</Abstract>
+			<DeclaredIn>UOCData.h</DeclaredIn>			
+			
+			<Declaration>- (void)addMaterial:(NSDictionary *)materialData error:(NSError *__autoreleasing *)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>materialData</Name>
+					<Abstract type="html">NSDictionary with the objects and keys correspondig to the Material object</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">Object to contain possible errors during insert</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addMaterial:error:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCData/materialCountForClassroom:</TokenIdentifier>
+			<Abstract type="html">Number of material stored for a given classroom in the system</Abstract>
+			<DeclaredIn>UOCData.h</DeclaredIn>			
+			
+			<Declaration>- (int)materialCountForClassroom:(NSString *)classroomId</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>classroomId</Name>
+					<Abstract type="html">identifier of the classroom you want the meterial from</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">int corresponding to the number of material stored in the system</Abstract></ReturnValue>
+			<Anchor>//api/name/materialCountForClassroom:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCData/getMaterialWithId:inClassroom:error:</TokenIdentifier>
+			<Abstract type="html">Get material data for a given id</Abstract>
+			<DeclaredIn>UOCData.h</DeclaredIn>			
+			
+			<Declaration>- (NSDictionary *)getMaterialWithId:(NSString *)materialId inClassroom:(NSString *)classroomId error:(NSError **)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>materialId</Name>
+					<Abstract type="html">Id of the requested Material</Abstract>
+				</Parameter><Parameter>
+					<Name>classroomId</Name>
+					<Abstract type="html">Id of the Classroom which the material belongs to</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">Object to contain possible errors during request</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">NSDictionary with the data of the material if found, otherwise nil</Abstract></ReturnValue>
+			<Anchor>//api/name/getMaterialWithId:inClassroom:error:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCData/updateMaterial:error:</TokenIdentifier>
+			<Abstract type="html">Update material with the new values</Abstract>
+			<DeclaredIn>UOCData.h</DeclaredIn>			
+			
+			<Declaration>- (void)updateMaterial:(NSDictionary *)materialData error:(NSError **)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>materialData</Name>
+					<Abstract type="html">NSDictionary with the objects and keys correspondig to the user object</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">Object to contain possible errors during update</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/updateMaterial:error:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCData/materialListForClassroom:</TokenIdentifier>
+			<Abstract type="html">List of Material stored in the system for a give Classroom</Abstract>
+			<DeclaredIn>UOCData.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)materialListForClassroom:(NSString *)classroomId</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>classroomId</Name>
+					<Abstract type="html">identifier of the classroom you want the meterial from</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">NSArray corresponding to all the material stored in the system</Abstract></ReturnValue>
+			<Anchor>//api/name/materialListForClassroom:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCData/fetchEventWithId:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UOCData.m</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)fetchEventWithId:(NSString *)eventId error:(NSError **)error</Declaration>
+			
+			
+			<Anchor>//api/name/fetchEventWithId:error:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCData/fetchClassroomWithId:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UOCData.m</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)fetchClassroomWithId:(NSString *)classroomId error:(NSError **)error</Declaration>
+			
+			
+			<Anchor>//api/name/fetchClassroomWithId:error:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCData/fetchMaterialWithId:inclassroom:error:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UOCData.m</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)fetchMaterialWithId:(NSString *)materialId inclassroom:(NSString *)classroomId error:(NSError **)error</Declaration>
+			
+			
+			<Anchor>//api/name/fetchMaterialWithId:inclassroom:error:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCData/connection:didReceiveResponse:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UOCData.m</DeclaredIn>			
+			
+			<Declaration>- (void)connection:(UOCMaterialConnection *)connection didReceiveResponse:(NSURLResponse *)response</Declaration>
+			
+			
+			<Anchor>//api/name/connection:didReceiveResponse:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCData/connection:didReceiveData:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UOCData.m</DeclaredIn>			
+			
+			<Declaration>- (void)connection:(UOCMaterialConnection *)connection didReceiveData:(NSData *)data</Declaration>
+			
+			
+			<Anchor>//api/name/connection:didReceiveData:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCData/connection:didFailWithError:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UOCData.m</DeclaredIn>			
+			
+			<Declaration>- (void)connection:(UOCMaterialConnection *)connection didFailWithError:(NSError *)error</Declaration>
+			
+			
+			<Anchor>//api/name/connection:didFailWithError:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCData/connectionDidFinishLoading:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UOCData.m</DeclaredIn>			
+			
+			<Declaration>- (void)connectionDidFinishLoading:(UOCMaterialConnection *)connection</Declaration>
+			
+			
+			<Anchor>//api/name/connectionDidFinishLoading:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+	</File>
+</Tokens>

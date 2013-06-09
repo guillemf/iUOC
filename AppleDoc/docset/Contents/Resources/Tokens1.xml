@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/OpenAPI.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/OpenAPI</TokenIdentifier>
+			<Abstract type="html">OAuth 2 constants.
+Have to be replaced with production values when released</Abstract>
+			<DeclaredIn>OpenAPI.h</DeclaredIn>
+			
+			<NodeRef refid="1"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPI/setReceivedData:</TokenIdentifier>
+			<Abstract type="html">Data received on the current/last request</Abstract>
+			<DeclaredIn>OpenAPI.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong) NSMutableData *receivedData</Declaration>
+			
+			
+			<Anchor>//api/name/receivedData</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPI/receivedData</TokenIdentifier>
+			<Abstract type="html">Data received on the current/last request</Abstract>
+			<DeclaredIn>OpenAPI.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong) NSMutableData *receivedData</Declaration>
+			
+			
+			<Anchor>//api/name/receivedData</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/OpenAPI/receivedData</TokenIdentifier>
+			<Abstract type="html">Data received on the current/last request</Abstract>
+			<DeclaredIn>OpenAPI.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong) NSMutableData *receivedData</Declaration>
+			
+			
+			<Anchor>//api/name/receivedData</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPI/initWithParams:</TokenIdentifier>
+			<Abstract type="html">Default initialiser
+Creates the object and keeps the reference to a object containing the user specific configuration</Abstract>
+			<DeclaredIn>OpenAPI.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithParams:(NSUserDefaults *)parameters</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>parameters</Name>
+					<Abstract type="html">List of the user parameters</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/initWithParams:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPI/isUserAuthorized</TokenIdentifier>
+			<Abstract type="html">Checks whether the user is authorized by the OpenAPI or not</Abstract>
+			<DeclaredIn>OpenAPI.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)isUserAuthorized</Declaration>
+			
+			
+			<Anchor>//api/name/isUserAuthorized</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPI/authorizeUsingWebView:</TokenIdentifier>
+			<Abstract type="html">Starts the authorisation process</Abstract>
+			<DeclaredIn>OpenAPI.h</DeclaredIn>			
+			
+			<Declaration>- (void)authorizeUsingWebView:(UIWebView *)view</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>view</Name>
+					<Abstract type="html">UIWebView used to show OAuth info from server</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/authorizeUsingWebView:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPI/deauthorize</TokenIdentifier>
+			<Abstract type="html">Starts the deauthorisation process</Abstract>
+			<DeclaredIn>OpenAPI.h</DeclaredIn>			
+			
+			<Declaration>- (void)deauthorize</Declaration>
+			
+			
+			<Anchor>//api/name/deauthorize</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPI/performGETRequest:withParameters:forId:notifyOnCompletion:error:</TokenIdentifier>
+			<Abstract type="html">Method to perform the different requests to the service. They are GET requests. When finished a notification is received.</Abstract>
+			<DeclaredIn>OpenAPI.h</DeclaredIn>			
+			
+			<Declaration>- (void)performGETRequest:(NSString *)url withParameters:(NSDictionary *)parameters forId:(NSString *)rId notifyOnCompletion:(NSString *)notificationKey error:(NSError **)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>url</Name>
+					<Abstract type="html">Complete url in REST format starting from the root of the service</Abstract>
+				</Parameter><Parameter>
+					<Name>parameters</Name>
+					<Abstract type="html">List of parameters to send on the header of the connection</Abstract>
+				</Parameter><Parameter>
+					<Name>rId</Name>
+					<Abstract type="html">Identification of the object the call was made for, it is only a reference that will be returned as is on the results to be able of identify the call.</Abstract>
+				</Parameter><Parameter>
+					<Name>notificationKey</Name>
+					<Abstract type="html">Notification to be fired when the data is received</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract type="html">Error object to detect before the call is made</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/performGETRequest:withParameters:forId:notifyOnCompletion:error:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPI/accessTokenExchange:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPI.h</DeclaredIn>			
+			
+			<Declaration>- (void)accessTokenExchange:(NSString *)code</Declaration>
+			
+			
+			<Anchor>//api/name/accessTokenExchange:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPI/refreshToken</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPI.m</DeclaredIn>			
+			
+			<Declaration>- (void)refreshToken</Declaration>
+			
+			
+			<Anchor>//api/name/refreshToken</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPI/webView:didFailLoadWithError:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPI.m</DeclaredIn>			
+			
+			<Declaration>- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error</Declaration>
+			
+			
+			<Anchor>//api/name/webView:didFailLoadWithError:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPI/webView:shouldStartLoadWithRequest:navigationType:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPI.m</DeclaredIn>			
+			
+			<Declaration>- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType</Declaration>
+			
+			
+			<Anchor>//api/name/webView:shouldStartLoadWithRequest:navigationType:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPI/connection:didReceiveResponse:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPI.m</DeclaredIn>			
+			
+			<Declaration>- (void)connection:(OpenAPIURLConnection *)connection didReceiveResponse:(NSURLResponse *)response</Declaration>
+			
+			
+			<Anchor>//api/name/connection:didReceiveResponse:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPI/connection:didReceiveData:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPI.m</DeclaredIn>			
+			
+			<Declaration>- (void)connection:(OpenAPIURLConnection *)connection didReceiveData:(NSData *)data</Declaration>
+			
+			
+			<Anchor>//api/name/connection:didReceiveData:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPI/connection:didFailWithError:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPI.m</DeclaredIn>			
+			
+			<Declaration>- (void)connection:(OpenAPIURLConnection *)connection didFailWithError:(NSError *)error</Declaration>
+			
+			
+			<Anchor>//api/name/connection:didFailWithError:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPI/connectionDidFinishLoading:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPI.m</DeclaredIn>			
+			
+			<Declaration>- (void)connectionDidFinishLoading:(OpenAPIURLConnection *)connection</Declaration>
+			
+			
+			<Anchor>//api/name/connectionDidFinishLoading:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+	</File>
+</Tokens>

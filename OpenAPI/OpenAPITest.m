@@ -56,7 +56,8 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newDataReceived:) name:kOAPIDataReceivedNotification object:sut];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(invalidToken:) name:kOAPIInvalidTokenNotification object:sut];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tokenNotificationCalled:) name:kTestTEC object:sut];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tokenNotificationCalled:) name:kOAPIUserAuthorisedNotification object:sut];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tokenNotificationCalled:) name:kOAPIUserAuthorizedNotification object:sut];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tokenNotificationCalled:) name:kOAPIUserUnAutorizedNotification object:sut];
     
 }
 
@@ -68,33 +69,33 @@
     [super tearDown];
 }
 
-- (void)testWhenAskedForUserAuthorisedTokenIsRequested
+- (void)testWhenAskedForUserAuthorizedTokenIsRequested
 {
     // when
-    [sut isUserAuthorised];
+    [sut isUserAuthorized];
     // then
     [verify(usDef) objectForKey:kOAPIUserToken];
 }
 
-- (void)testWhenTokenDoesntExistsIsUserAuthorisedReturnsNO
+- (void)testWhenTokenDoesntExistsIsUserAuthorizedReturnsNO
 {
     // given
     [given([usDef objectForKey:kOAPIUserToken]) willReturn:nil];
     
     // then
-    assertThatBool([sut isUserAuthorised], equalToBool(NO));
+    assertThatBool([sut isUserAuthorized], equalToBool(NO));
 }
 
-- (void)testWhenTokenExistsIsUserAuthorisedReturnsYES
+- (void)testWhenTokenExistsIsUserAuthorizedReturnsYES
 {
     // given
     [given([usDef objectForKey:kOAPIUserToken]) willReturn:notNilValue()];
     
     // then
-    assertThatBool([sut isUserAuthorised], equalToBool(YES));
+    assertThatBool([sut isUserAuthorized], equalToBool(YES));
 }
 
-- (void)testWhenUserIsNotAuthorisedRequestWillReturnError
+- (void)testWhenUserIsNotAuthorizedRequestWillReturnError
 {
     // given
     [given([usDef objectForKey:kOAPIUserToken]) willReturn:nil];
@@ -114,7 +115,7 @@
     UIWebView *webView = mock([UIWebView class]);
     
     // when
-    [sut authoriseUsingWebView:webView];
+    [sut authorizeUsingWebView:webView];
     
     // then
     [verify(webView) loadRequest:(id)instanceOf([NSURLRequest class])];
@@ -228,7 +229,7 @@
 
 - (void)newDataReceived:(NSNotification *)notification
 {
-    jsonArray = notification.userInfo;
+    jsonArray = [notification.userInfo objectForKey:@"data"];
 }
 
 - (void)testDataIsParsedWhenConnectionFinishedReceivingData
@@ -238,11 +239,14 @@
     NSMutableData *jsonData = [NSData dataWithContentsOfFile:dataPath];
     NSError *error;
     NSMutableDictionary *testJsonArray = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];
-    [testJsonArray setObject:@"" forKey:@"requesterid"];
 
     sut.receivedData = jsonData;
+    
+    OpenAPIURLConnection *testConnection = mock([OpenAPIURLConnection class]);
+    [given([testConnection requestType]) willReturnInteger:OAPIConnectionRequestType];
+    
     // when
-    [sut connectionDidFinishLoading:nil];
+    [sut connectionDidFinishLoading:testConnection];
     
     // then
     assertThat(jsonArray, is(equalTo(testJsonArray)));
@@ -331,5 +335,12 @@
     [verify(usDef) setObject:@"96165eb6-963c-4e38-a9e7-4f67d841139b" forKey:@"access_token"];
 }
 
-
+- (void)testWhenDeauthorizeIsDoneShouldSendNotification
+{
+    // when
+    [sut deauthorize];
+    
+    // then
+    assertThatBool(tokenNotificationCalled, is(equalToBool(YES)));
+}
 @end

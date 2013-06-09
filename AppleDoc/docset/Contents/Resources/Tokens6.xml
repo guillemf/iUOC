@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/UOCMaterialConnection.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/UOCMaterialConnection</TokenIdentifier>
+			<Abstract type="html">Notification keys</Abstract>
+			<DeclaredIn>UOCData.h</DeclaredIn>
+			
+			<NodeRef refid="6"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCMaterialConnection/setMaterialId:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UOCData.h</DeclaredIn>			
+			
+			<Declaration>@property (strong, nonatomic) NSString *materialId</Declaration>
+			
+			
+			<Anchor>//api/name/materialId</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCMaterialConnection/materialId</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UOCData.h</DeclaredIn>			
+			
+			<Declaration>@property (strong, nonatomic) NSString *materialId</Declaration>
+			
+			
+			<Anchor>//api/name/materialId</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UOCMaterialConnection/materialId</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UOCData.h</DeclaredIn>			
+			
+			<Declaration>@property (strong, nonatomic) NSString *materialId</Declaration>
+			
+			
+			<Anchor>//api/name/materialId</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCMaterialConnection/setClassroomId:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UOCData.h</DeclaredIn>			
+			
+			<Declaration>@property (strong, nonatomic) NSString *classroomId</Declaration>
+			
+			
+			<Anchor>//api/name/classroomId</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCMaterialConnection/classroomId</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UOCData.h</DeclaredIn>			
+			
+			<Declaration>@property (strong, nonatomic) NSString *classroomId</Declaration>
+			
+			
+			<Anchor>//api/name/classroomId</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/UOCMaterialConnection/classroomId</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UOCData.h</DeclaredIn>			
+			
+			<Declaration>@property (strong, nonatomic) NSString *classroomId</Declaration>
+			
+			
+			<Anchor>//api/name/classroomId</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/UOCMaterialConnection/initWithRequest:forMaterial:inClassroom:delegate:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UOCData.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithRequest:(NSURLRequest *)request forMaterial:(NSString *)materialId inClassroom:(NSString *)classroomId delegate:(id)delegate</Declaration>
+			
+			
+			<Anchor>//api/name/initWithRequest:forMaterial:inClassroom:delegate:</Anchor>
+            <NodeRef refid="6"/>
+		</Token>
+		
+	</File>
+</Tokens>

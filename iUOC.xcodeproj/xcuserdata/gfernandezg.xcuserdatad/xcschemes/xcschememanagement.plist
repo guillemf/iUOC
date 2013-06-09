@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Documentation.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>iUOC.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -12,6 +17,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>8A0AC36E1764E61800366CFC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>8ADB4BC316F37FCF0057BCCE</key>
 		<dict>
 			<key>primary</key>

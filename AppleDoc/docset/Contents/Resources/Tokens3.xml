@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/OpenAPIURLConnection.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/OpenAPIURLConnection</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPI.h</DeclaredIn>
+			
+			<NodeRef refid="3"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPIURLConnection/setRId:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPI.h</DeclaredIn>			
+			
+			<Declaration>@property (strong, nonatomic) NSString *rId</Declaration>
+			
+			
+			<Anchor>//api/name/rId</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPIURLConnection/rId</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPI.h</DeclaredIn>			
+			
+			<Declaration>@property (strong, nonatomic) NSString *rId</Declaration>
+			
+			
+			<Anchor>//api/name/rId</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/OpenAPIURLConnection/rId</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPI.h</DeclaredIn>			
+			
+			<Declaration>@property (strong, nonatomic) NSString *rId</Declaration>
+			
+			
+			<Anchor>//api/name/rId</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPIURLConnection/setRequestType:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPI.h</DeclaredIn>			
+			
+			<Declaration>@property (assign, nonatomic) OAPIConnectionType requestType</Declaration>
+			
+			
+			<Anchor>//api/name/requestType</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPIURLConnection/requestType</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPI.h</DeclaredIn>			
+			
+			<Declaration>@property (assign, nonatomic) OAPIConnectionType requestType</Declaration>
+			
+			
+			<Anchor>//api/name/requestType</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/OpenAPIURLConnection/requestType</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPI.h</DeclaredIn>			
+			
+			<Declaration>@property (assign, nonatomic) OAPIConnectionType requestType</Declaration>
+			
+			
+			<Anchor>//api/name/requestType</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPIURLConnection/setNotification:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPI.h</DeclaredIn>			
+			
+			<Declaration>@property (strong, nonatomic) NSString *notification</Declaration>
+			
+			
+			<Anchor>//api/name/notification</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPIURLConnection/notification</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPI.h</DeclaredIn>			
+			
+			<Declaration>@property (strong, nonatomic) NSString *notification</Declaration>
+			
+			
+			<Anchor>//api/name/notification</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/OpenAPIURLConnection/notification</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPI.h</DeclaredIn>			
+			
+			<Declaration>@property (strong, nonatomic) NSString *notification</Declaration>
+			
+			
+			<Anchor>//api/name/notification</Anchor>
+            <NodeRef refid="3"/>
+		</Token>
+		
+	</File>
+</Tokens>

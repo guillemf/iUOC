@@ -14,8 +14,27 @@ NSString * const kUOCDWillStartDownloadingMaterial = @"UOCDWillStartDownloadingM
 NSString * const kUOCDDidStartDownloadingMaterial = @"UOCDDidStartDownloadingMaterial";
 NSString * const kUOCDWillEndDownloadingMaterial = @"UOCDWillEndDownloadingMaterial";
 NSString * const kUOCDDidEndtDownloadingMaterial = @"UOCDDidEndDownloadingMaterial";
+NSString * const kUOCDDownloadErrror = @"UOCDDownloadErrror";
 
-@interface UOCData() 
+NSString * const kUOCDNewUserDataAvailable = @"kUOCDNewUserDataAvailable";
+
+@implementation UOCMaterialConnection
+
+- (id)initWithRequest:(NSURLRequest *)request forMaterial:(NSString *)materialId inClassroom:(NSString *)classroomId delegate:(id)delegate;
+{
+    self = [super initWithRequest:request delegate:delegate];
+    
+    if (self) {
+        _materialId = materialId;
+        _classroomId = classroomId;
+    }
+    
+    return self;
+}
+@end
+
+
+@interface UOCData()
 {
     NSManagedObjectContext *_moc;
 
@@ -62,7 +81,7 @@ NSString * const kUOCDDidEndtDownloadingMaterial = @"UOCDDidEndDownloadingMateri
          @catch (NSException *exception) {
              inError = [NSError errorWithDomain:kUOCDErrorDomain
                                            code:kUOCDErrorKeyNotInEntity
-                                       userInfo:[NSDictionary dictionaryWithObject:@"Trying to insert unexisting key in USer" forKey:NSLocalizedDescriptionKey]];
+                                       userInfo:[NSDictionary dictionaryWithObject:@"Trying to insert unexisting key in User" forKey:NSLocalizedDescriptionKey]];
              *stop = YES;
          }
          @finally {
@@ -78,6 +97,51 @@ NSString * const kUOCDDidEndtDownloadingMaterial = @"UOCDDidEndDownloadingMateri
     }
     
     [_moc save:error];
+
+    if (!(*error))
+        [[NSNotificationCenter defaultCenter] postNotificationName:kUOCDNewUserDataAvailable object:self];
+}
+
+- (NSDictionary *)getUserData
+{
+    if (![self hasUserData]) return  nil;
+    
+    NSError *error;
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:[NSEntityDescription entityForName:@"User" inManagedObjectContext:_moc]];
+    
+    NSArray *results = [_moc executeFetchRequest:request error:&error];
+    
+    if (error) return nil;
+    
+    NSManagedObject *existingUser = [results objectAtIndex:0];
+    
+    NSArray *userProperties = [[[existingUser entity] attributesByName] allKeys];
+    
+    return [existingUser dictionaryWithValuesForKeys:userProperties];
+    
+}
+
+- (BOOL)deleteUserData:(NSError **)error
+{
+    NSFetchRequest * allUsers = [[NSFetchRequest alloc] init];
+    [allUsers setEntity:[NSEntityDescription entityForName:@"User" inManagedObjectContext:_moc]];
+    [allUsers setIncludesPropertyValues:NO]; //only fetch the managedObjectID
+    
+    NSArray * users = [_moc executeFetchRequest:allUsers error:error];
+
+    if (*error) return NO;
+        
+    //error handling goes here
+    for (NSManagedObject * user in users) {
+        [_moc deleteObject:user];
+    }
+    [_moc save:error];
+    
+    if (*error)
+        return NO;
+    else
+        return YES;
 
 }
 
@@ -199,6 +263,31 @@ NSString * const kUOCDDidEndtDownloadingMaterial = @"UOCDDidEndDownloadingMateri
     
     [_moc save:error];
 
+}
+
+- (int)deleteAllEvents:(NSError **)error
+{
+    NSFetchRequest * allEvents = [[NSFetchRequest alloc] init];
+    [allEvents setEntity:[NSEntityDescription entityForName:@"Event" inManagedObjectContext:_moc]];
+    [allEvents setIncludesPropertyValues:NO];
+    
+    NSArray * events = [_moc executeFetchRequest:allEvents error:error];
+
+    if (*error) return -1;
+    
+    int eventsDeleted = 0;
+    
+    for (NSManagedObject * event in events) {
+        [_moc deleteObject:event];
+        ++eventsDeleted;
+    }
+
+    [_moc save:error];
+    
+    if (*error)
+        return -1;
+    else
+        return eventsDeleted;        
 }
 
 #pragma mark - Classroom methods
@@ -345,6 +434,31 @@ NSString * const kUOCDDidEndtDownloadingMaterial = @"UOCDDidEndDownloadingMateri
     
 }
 
+- (int)deleteAllClassrooms:(NSError **)error
+{
+    NSFetchRequest * allClassrooms = [[NSFetchRequest alloc] init];
+    [allClassrooms setEntity:[NSEntityDescription entityForName:@"Classroom" inManagedObjectContext:_moc]];
+    [allClassrooms setIncludesPropertyValues:NO];
+    
+    NSArray * classrooms = [_moc executeFetchRequest:allClassrooms error:error];
+    
+    if (*error) return -1;
+    
+    int classroomsDeleted = 0;
+    
+    for (NSManagedObject * classroom in classrooms) {
+        [_moc deleteObject:classroom];
+        ++classroomsDeleted;
+    }
+    
+    [_moc save:error];
+    
+    if (*error)
+        return -1;
+    else
+        return classroomsDeleted;
+}
+
 #pragma mark - Material methods
 
 - (NSArray *)fetchMaterialWithId:(NSString *)materialId inclassroom:(NSString *)classroomId error:(NSError **)error
@@ -356,7 +470,7 @@ NSString * const kUOCDDidEndtDownloadingMaterial = @"UOCDDidEndDownloadingMateri
     if ([classrooms count] < 1) return nil;
     
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:[NSEntityDescription entityForName:@"Event" inManagedObjectContext:_moc]];
+    [request setEntity:[NSEntityDescription entityForName:@"Material" inManagedObjectContext:_moc]];
     NSPredicate *findPredicate = [NSPredicate predicateWithFormat:@"(id == %@) AND (classroom == %@)", materialId, [classrooms objectAtIndex:0]];
     [request setPredicate:findPredicate];
     
@@ -426,7 +540,10 @@ NSString * const kUOCDDidEndtDownloadingMaterial = @"UOCDDidEndDownloadingMateri
         NSURLRequest *materialRequest = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:[materialData objectForKey:@"url"]]];
         
         [[NSNotificationCenter defaultCenter] postNotificationName:kUOCDWillStartDownloadingMaterial object:self];
-        NSURLConnection __attribute__((unused)) *connection = [[NSURLConnection alloc] initWithRequest:materialRequest delegate:self];
+        UOCMaterialConnection __attribute__((unused)) *connection = [[UOCMaterialConnection alloc] initWithRequest:materialRequest
+                                                                                                       forMaterial:[materialData objectForKey:@"id"]
+                                                                                                       inClassroom:[materialData objectForKey:@"classroom"]
+                                                                                                          delegate:self];
     }
 }
 
@@ -453,15 +570,76 @@ NSString * const kUOCDDidEndtDownloadingMaterial = @"UOCDDidEndDownloadingMateri
     
 }
 
+- (NSDictionary *)getMaterialWithId:(NSString *)materialId inClassroom:(NSString *)classroomId error:(NSError **)error
+{
+    NSArray *results;
+    results = [self fetchMaterialWithId:materialId inclassroom:classroomId error:error];
+    
+    if (*error) return nil;
+    
+    if ([results count] == 0) return nil;
+    
+    NSManagedObject *existingMaterial = [results objectAtIndex:0];
+    
+    NSArray *materialProperties = [[[existingMaterial entity] attributesByName] allKeys];
+    
+    NSMutableDictionary *resMaterial = [[existingMaterial dictionaryWithValuesForKeys:materialProperties] mutableCopy];
+    [resMaterial setObject:classroomId forKey:@"classroom"];
+    return resMaterial;
+}
+
+//TODO:updatematerial should delete material and check for different material options.
+- (void)updateMaterial:(NSDictionary *)materialData error:(NSError **)error
+{
+    NSArray *results;
+    results = [self fetchMaterialWithId:[materialData objectForKey:@"id"] inclassroom:[materialData objectForKey:@"classroom"] error:error];
+    
+    if (*error) return;
+    
+    if ([results count] == 0) return;
+    
+    NSManagedObject *updateMaterial = [results objectAtIndex:0];
+    
+    NSArray *materialProperties = [[[updateMaterial entity] attributesByName] allKeys];
+    
+    [materialProperties enumerateObjectsUsingBlock:^(NSString *key, NSUInteger idx, BOOL *stop){
+        if ((![key isEqualToString:@"id"])&&(![key isEqualToString:@"classroom"])){
+            [updateMaterial setValue:[materialData objectForKey:key] forKey:key];
+        }
+    }];
+    
+    [_moc save:error];
+    
+}
+
+- (NSArray *)materialListForClassroom:(NSString *)classroomId
+{
+    NSError *error;
+    NSArray *classrooms = [self fetchClassroomWithId:classroomId error:&error];
+    
+    if (error) return nil;
+    
+    if ([classrooms count] < 1) return nil;
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:[NSEntityDescription entityForName:@"Material" inManagedObjectContext:_moc]];
+    NSPredicate *findPredicate = [NSPredicate predicateWithFormat:@"classroom == %@", [classrooms objectAtIndex:0]];
+    [request setPredicate:findPredicate];
+    
+    NSArray *results = [_moc executeFetchRequest:request error:&error];
+    return results;
+}
+
+
 #pragma mark - Material URL Delegate Methods
 
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+- (void)connection:(UOCMaterialConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:kUOCDDidStartDownloadingMaterial object:self];
     self.receivedData = nil;
 }
 
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+- (void)connection:(UOCMaterialConnection *)connection didReceiveData:(NSData *)data
 {
     if (_receivedData == nil)
         _receivedData = [[NSMutableData alloc] initWithData:data];
@@ -469,73 +647,30 @@ NSString * const kUOCDDidEndtDownloadingMaterial = @"UOCDDidEndDownloadingMateri
         [_receivedData appendData:data];
 }
 
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+- (void)connection:(UOCMaterialConnection *)connection didFailWithError:(NSError *)error
 {
     NSMutableDictionary *errorInfo = [NSMutableDictionary dictionaryWithObject:error forKey:@"error"];
-    
-//    if (error.code == 1009) {
-//        [[NSNotificationCenter defaultCenter] postNotificationName:kOAPIOfflineErrorNotification object:self userInfo:errorInfo];
-//    } else {
-//        OpenAPIURLConnection *currrentConnection = (OpenAPIURLConnection *)connection;
-//        
-//        switch (currrentConnection.requestType) {
-//            case OAPIConnectionRequestType:
-//                [errorInfo setObject:[NSNumber numberWithInt:OAPIConnectionRequestType ] forKey:@"connection_type"];
-//                break;
-//            case OAPIConnectionTokenRenewType:
-//                [errorInfo setObject:[NSNumber numberWithInt:OAPIConnectionTokenRenewType ] forKey:@"connection_type"];
-//                break;
-//            case OAPIConnectionTokenExchangeType:
-//                [errorInfo setObject:[NSNumber numberWithInt:OAPIConnectionTokenExchangeType ] forKey:@"connection_type"];
-//                break;
-//            default:
-//                break;
-//        }
-//        [[NSNotificationCenter defaultCenter] postNotificationName:kOAPIErrorNotification object:self userInfo:errorInfo];
-//    }
+    [[NSNotificationCenter defaultCenter] postNotificationName:kUOCDDownloadErrror object:self userInfo:errorInfo];
 }
 
-- (void) connectionDidFinishLoading:(NSURLConnection *)connection
+- (void) connectionDidFinishLoading:(UOCMaterialConnection *)connection
 {
-    NSError *error;
-//    NSDictionary *jsonArray = [NSJSONSerialization JSONObjectWithData:_receivedData options:NSJSONReadingMutableContainers error:&error];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kUOCDWillEndDownloadingMaterial object:self];
+
+    if ((connection.classroomId != nil) && (connection.materialId != nil)) {
     
-//    if (error != nil) {
-//        NSDictionary *errorInfo = [NSDictionary dictionaryWithObject:error forKey:@"error"];
-//        [[NSNotificationCenter defaultCenter] postNotificationName:kOAPIErrorNotification object:self userInfo:errorInfo];
-//    }
-//    
-//    if ([[jsonArray objectForKey:@"error"] isEqualToString:@"invalid_token"]) {
-//        [[NSNotificationCenter defaultCenter] postNotificationName:kOAPIInvalidTokenNotification object:self];
-//        return;
-//    }
-//    
-//    NSMutableDictionary *responseData = [jsonArray mutableCopy];
-//    OpenAPIURLConnection *currrentConnection = (OpenAPIURLConnection *)connection;
-//    
-//    switch (currrentConnection.requestType) {
-//        case OAPIConnectionRequestType:
-//            if (currrentConnection.rId == nil)
-//                [responseData setObject:@"" forKey:@"requesterid"];
-//            else
-//                [responseData setObject:currrentConnection.rId forKey:@"requesterid"];
-//            
-//            [[NSNotificationCenter defaultCenter] postNotificationName:kOAPIDataReceivedNotification object:self userInfo:responseData];
-//            break;
-//        case OAPIConnectionTokenExchangeType:
-//        case OAPIConnectionTokenRenewType:
-//        {
-//            [jsonArray enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop)
-//             {
-//                 [_params setObject:obj forKey:key];
-//             }];
-//            [_params synchronize];
-//            [[NSNotificationCenter defaultCenter] postNotificationName:kOAPIUserAuthorisedNotification object:self userInfo:responseData];
-//        }
-//            break;
-//        default:
-//            break;
-//    }
+        NSString *resourceDocPath = [[NSString alloc] initWithString:[[[[NSBundle mainBundle]  resourcePath] stringByDeletingLastPathComponent] stringByAppendingPathComponent:@"Documents"]];
+        NSString *documentName = [NSString stringWithFormat:@"%@_%@.pdf", connection.classroomId, connection.materialId];
+        NSString *filePath = [resourceDocPath stringByAppendingPathComponent:documentName];
+        
+        [self.receivedData writeToFile:filePath atomically:YES];
+    }
+    
+    NSDictionary *materialInfo = [NSDictionary dictionaryWithObjectsAndKeys:connection.materialId, @"materialId", connection.classroomId, @"classroomId", nil];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:kUOCDDidEndtDownloadingMaterial object:self userInfo:materialInfo];
+
 }
+
 
 @end

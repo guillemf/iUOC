@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/OpenAPITest.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/OpenAPITest</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPITest.m</DeclaredIn>
+			
+			<NodeRef refid="2"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPITest/setUp</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPITest.m</DeclaredIn>			
+			
+			<Declaration>- (void)setUp</Declaration>
+			
+			
+			<Anchor>//api/name/setUp</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPITest/tearDown</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPITest.m</DeclaredIn>			
+			
+			<Declaration>- (void)tearDown</Declaration>
+			
+			
+			<Anchor>//api/name/tearDown</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPITest/testWhenAskedForUserAuthorizedTokenIsRequested</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPITest.m</DeclaredIn>			
+			
+			<Declaration>- (void)testWhenAskedForUserAuthorizedTokenIsRequested</Declaration>
+			
+			
+			<Anchor>//api/name/testWhenAskedForUserAuthorizedTokenIsRequested</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPITest/testWhenTokenDoesntExistsIsUserAuthorizedReturnsNO</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPITest.m</DeclaredIn>			
+			
+			<Declaration>- (void)testWhenTokenDoesntExistsIsUserAuthorizedReturnsNO</Declaration>
+			
+			
+			<Anchor>//api/name/testWhenTokenDoesntExistsIsUserAuthorizedReturnsNO</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPITest/testWhenTokenExistsIsUserAuthorizedReturnsYES</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPITest.m</DeclaredIn>			
+			
+			<Declaration>- (void)testWhenTokenExistsIsUserAuthorizedReturnsYES</Declaration>
+			
+			
+			<Anchor>//api/name/testWhenTokenExistsIsUserAuthorizedReturnsYES</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPITest/testWhenUserIsNotAuthorizedRequestWillReturnError</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPITest.m</DeclaredIn>			
+			
+			<Declaration>- (void)testWhenUserIsNotAuthorizedRequestWillReturnError</Declaration>
+			
+			
+			<Anchor>//api/name/testWhenUserIsNotAuthorizedRequestWillReturnError</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPITest/testWhenAuthorisationWithWebViewIsStartedLoadRequestIsCalled</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPITest.m</DeclaredIn>			
+			
+			<Declaration>- (void)testWhenAuthorisationWithWebViewIsStartedLoadRequestIsCalled</Declaration>
+			
+			
+			<Anchor>//api/name/testWhenAuthorisationWithWebViewIsStartedLoadRequestIsCalled</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPITest/testErrorOnWebViewForAuthorisationSendsNotification</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPITest.m</DeclaredIn>			
+			
+			<Declaration>- (void)testErrorOnWebViewForAuthorisationSendsNotification</Declaration>
+			
+			
+			<Anchor>//api/name/testErrorOnWebViewForAuthorisationSendsNotification</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPITest/testNavigationToURLAreAllowedWhenURLIsNotRedirectURL</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPITest.m</DeclaredIn>			
+			
+			<Declaration>- (void)testNavigationToURLAreAllowedWhenURLIsNotRedirectURL</Declaration>
+			
+			
+			<Anchor>//api/name/testNavigationToURLAreAllowedWhenURLIsNotRedirectURL</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPITest/testNavigationToURLIsNotAllowedWhenURLIsRedirectURL</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPITest.m</DeclaredIn>			
+			
+			<Declaration>- (void)testNavigationToURLIsNotAllowedWhenURLIsRedirectURL</Declaration>
+			
+			
+			<Anchor>//api/name/testNavigationToURLIsNotAllowedWhenURLIsRedirectURL</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPITest/testWhenNoRequestCodeIsReceivedWithRedirectionURLNotificationErrorIsSent</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPITest.m</DeclaredIn>			
+			
+			<Declaration>- (void)testWhenNoRequestCodeIsReceivedWithRedirectionURLNotificationErrorIsSent</Declaration>
+			
+			
+			<Anchor>//api/name/testWhenNoRequestCodeIsReceivedWithRedirectionURLNotificationErrorIsSent</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPITest/tokenNotificationCalled:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPITest.m</DeclaredIn>			
+			
+			<Declaration>- (void)tokenNotificationCalled:(NSNotification *)notification</Declaration>
+			
+			
+			<Anchor>//api/name/tokenNotificationCalled:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPITest/testRequestCodeInRedirectionURLCallsAccessTokenExchange</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPITest.m</DeclaredIn>			
+			
+			<Declaration>- (void)testRequestCodeInRedirectionURLCallsAccessTokenExchange</Declaration>
+			
+			
+			<Anchor>//api/name/testRequestCodeInRedirectionURLCallsAccessTokenExchange</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPITest/testReceivedDataRemovedWhenANewResponseIsReceived</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPITest.m</DeclaredIn>			
+			
+			<Declaration>- (void)testReceivedDataRemovedWhenANewResponseIsReceived</Declaration>
+			
+			
+			<Anchor>//api/name/testReceivedDataRemovedWhenANewResponseIsReceived</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPITest/testDataFromConnectionGetsAppendedToReceivedData</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPITest.m</DeclaredIn>			
+			
+			<Declaration>- (void)testDataFromConnectionGetsAppendedToReceivedData</Declaration>
+			
+			
+			<Anchor>//api/name/testDataFromConnectionGetsAppendedToReceivedData</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPITest/errorNotification:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPITest.m</DeclaredIn>			
+			
+			<Declaration>- (void)errorNotification:(NSNotification *)notification</Declaration>
+			
+			
+			<Anchor>//api/name/errorNotification:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPITest/testNotificationIsSentWhenConnectionIsOffline</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPITest.m</DeclaredIn>			
+			
+			<Declaration>- (void)testNotificationIsSentWhenConnectionIsOffline</Declaration>
+			
+			
+			<Anchor>//api/name/testNotificationIsSentWhenConnectionIsOffline</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPITest/newDataReceived:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPITest.m</DeclaredIn>			
+			
+			<Declaration>- (void)newDataReceived:(NSNotification *)notification</Declaration>
+			
+			
+			<Anchor>//api/name/newDataReceived:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPITest/testDataIsParsedWhenConnectionFinishedReceivingData</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPITest.m</DeclaredIn>			
+			
+			<Declaration>- (void)testDataIsParsedWhenConnectionFinishedReceivingData</Declaration>
+			
+			
+			<Anchor>//api/name/testDataIsParsedWhenConnectionFinishedReceivingData</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPITest/testErrorNotificationIsRaisedWhenParsingDataProducesError</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPITest.m</DeclaredIn>			
+			
+			<Declaration>- (void)testErrorNotificationIsRaisedWhenParsingDataProducesError</Declaration>
+			
+			
+			<Anchor>//api/name/testErrorNotificationIsRaisedWhenParsingDataProducesError</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPITest/invalidToken:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPITest.m</DeclaredIn>			
+			
+			<Declaration>- (void)invalidToken:(NSNotification *)notification</Declaration>
+			
+			
+			<Anchor>//api/name/invalidToken:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPITest/testWhenResponseIsInvalidTokenNotificationIsSent</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPITest.m</DeclaredIn>			
+			
+			<Declaration>- (void)testWhenResponseIsInvalidTokenNotificationIsSent</Declaration>
+			
+			
+			<Anchor>//api/name/testWhenResponseIsInvalidTokenNotificationIsSent</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPITest/testAccessTokenExchangeDataReceivedParamsAreStored</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPITest.m</DeclaredIn>			
+			
+			<Declaration>- (void)testAccessTokenExchangeDataReceivedParamsAreStored</Declaration>
+			
+			
+			<Anchor>//api/name/testAccessTokenExchangeDataReceivedParamsAreStored</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPITest/testWhenTokenObtainedNotificationIsSent</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPITest.m</DeclaredIn>			
+			
+			<Declaration>- (void)testWhenTokenObtainedNotificationIsSent</Declaration>
+			
+			
+			<Anchor>//api/name/testWhenTokenObtainedNotificationIsSent</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPITest/testRenewTokenExchangeDataReceivedParamsAreUpdated</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPITest.m</DeclaredIn>			
+			
+			<Declaration>- (void)testRenewTokenExchangeDataReceivedParamsAreUpdated</Declaration>
+			
+			
+			<Anchor>//api/name/testRenewTokenExchangeDataReceivedParamsAreUpdated</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/OpenAPITest/testWhenDeauthorizeIsDoneShouldSendNotification</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>OpenAPITest.m</DeclaredIn>			
+			
+			<Declaration>- (void)testWhenDeauthorizeIsDoneShouldSendNotification</Declaration>
+			
+			
+			<Anchor>//api/name/testWhenDeauthorizeIsDoneShouldSendNotification</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+	</File>
+</Tokens>
